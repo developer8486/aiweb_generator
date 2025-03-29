@@ -11,7 +11,17 @@ const PORT = process.env.PORT || 3001;
 
 const anthropic = new Anthropic();
 const app = express();
-app.use(cors());
+const corsOptions = {
+  origin: [
+    "http://localhost:5173",
+    "http://localhost:5174",
+    "http://code-craft.app-x.live",
+    "https://code-craft.app-x.live",
+  ],
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
 app.post("/template", async (req, res) => {
