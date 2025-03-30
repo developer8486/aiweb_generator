@@ -236,7 +236,7 @@ export function Builder() {
                   {(loading || !templateSet) && <Loader />}
                   {!(loading || !templateSet) && (
                     <div className="flex gap-4 items-center">
-                      <textarea
+                      <textarea placeholder="customize your web app"
                         value={userPrompt}
                         onChange={(e) => {
                           setPrompt(e.target.value);
